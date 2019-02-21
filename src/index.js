@@ -14,13 +14,13 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 // We need a master/root reducer to give to the store
-import reducers from './reducers/index';
+// import reducers from './reducers/index';
 import rootReducer from './reducers/index';
 
 // make a store for redux to use. pass it reducers, which is teh
 // export of the rootreducer file. the rootreducer is just all the 
 // little reducers returns.
-const theStore = createStore(reducers);
+const theStore = createStore(rootReducer);
 
 // Provider is the combonent that makes connect work (connect is inside 
 //     the containers). It takes a prop of store, which is the reduxStore.

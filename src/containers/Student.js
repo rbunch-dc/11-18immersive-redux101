@@ -22,10 +22,11 @@ class Student extends Component{
 
     render(){
         console.log(this.props);
-        const students = this.props.rightSideOfRoom.map((student)=>{
-            return(<li>{student}</li>)
+        const students = this.props.rightSideOfRoom.map((student,i)=>{
+            return(<li key={i}>{student}</li>)
         })
-        console.log(this.props);
+
+        console.log(students)
         return(
             <div>
                 <h1>Students!</h1>
@@ -65,3 +66,15 @@ console.log(connect);
 
 // export default Student;
 export default connect(mapStateToProps,mapDispatchToProps)(Student);
+
+// somewhere inside of react-redux...
+// function connect(callBackToRun){
+	// mapDispatchToProps(IKnowAboutTheDispather)
+// 	callBackToRun(rootReducer)
+// 	return function(componentToRender){
+// 		return <componentToRender stuffToSendAsProps.key={stuffToSendAsProps[key]} />
+// 	}
+// }
+// return function(componentToRender){
+    // return <Student addStudent={addStudent} rightSideOfRoom={state.students} />
+// }
